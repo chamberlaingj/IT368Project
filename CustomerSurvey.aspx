@@ -4,9 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Customer Survey</title>
 </asp:Content>
+
 <asp:Content ID="body1" ContentPlaceHolderID="body" runat="server">
     <div>
-        <br />
         Enter your customer ID: &nbsp;
         <asp:TextBox ID="txtCustomerID" runat="server" Width="80px"></asp:TextBox>&nbsp;
         <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents" ValidationGroup="CustomerID" onclick="btnGetIncidents_Click" />
@@ -25,39 +25,42 @@
         <asp:Label ID="lblHeading" runat="server" Font-Bold="True" Text="Please rate this incident by the following categories:" Enabled="False"></asp:Label><br />
         <table>
             <tr>
-                <td class="style3" valign="top">
-                    <asp:Label ID="lblResponseTime" runat="server" Text="Response time:" Enabled="False"></asp:Label></td>
-                <td class="style4">
-                    <asp:RadioButtonList ID="rblResponseTime" runat="server" RepeatDirection="Horizontal"
-                        Width="470px" Enabled="False">
+                <td class="auto-style1" valign="top">
+                    <asp:Label ID="lblResponseTime" runat="server" Text="Response time:" Enabled="False"></asp:Label>
+                </td>
+                <td class="auto-style1">
+                    <asp:RadioButtonList ID="rblResponseTime" runat="server" RepeatDirection="Vertical" Enabled="False">
                         <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                         <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                         <asp:ListItem Value="3">Satisfied</asp:ListItem>
                         <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
-                    </asp:RadioButtonList></td>
+                    </asp:RadioButtonList>
+                </td>
             </tr>
             <tr>
-                <td class="style3" valign="top">
-                    <asp:Label ID="lblEfficiency" runat="server" Text="Technician efficiency:" Width="136px" Enabled="False"></asp:Label></td>
-                <td class="style4">
-                    <asp:RadioButtonList ID="rblEfficiency" runat="server" RepeatDirection="Horizontal"
-                        Width="470px" Enabled="False">
+                <td class="auto-style1" valign="top">
+                    <asp:Label ID="lblEfficiency" runat="server" Text="Technician efficiency:" Width="136px" Enabled="False"></asp:Label>
+                </td>
+                <td class="auto-style1">
+                    <asp:RadioButtonList ID="rblEfficiency" runat="server" RepeatDirection="Vertical" Enabled="False">
                     <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                     <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                     <asp:ListItem Value="3">Satisfied</asp:ListItem>
                     <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
-                </asp:RadioButtonList></td>
+                </asp:RadioButtonList>
+                </td>
             </tr>
             <tr>
-                <td class="style3" valign="top">
-                    <asp:Label ID="lblResolution" runat="server" Text="Problem resolution:" Enabled="False"></asp:Label></td>
-                <td class="style4"><asp:RadioButtonList ID="rblResolution" runat="server" RepeatDirection="Horizontal"
-                        Width="470px" Enabled="False">
+                <td class="auto-style1" valign="top">
+                    <asp:Label ID="lblResolution" runat="server" Text="Problem resolution:" Enabled="False"></asp:Label>
+                </td>
+                <td class="auto-style1"><asp:RadioButtonList ID="rblResolution" runat="server" RepeatDirection="Vertical" Enabled="False">
                     <asp:ListItem Value="1">Not satisfied</asp:ListItem>
                     <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
                     <asp:ListItem Value="3">Satisfied</asp:ListItem>
                     <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
-                </asp:RadioButtonList></td>
+                </asp:RadioButtonList>
+                </td>
             </tr>
         </table>
         <br />

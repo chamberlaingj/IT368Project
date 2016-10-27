@@ -3,40 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head id="SportsHead" runat="server">
+<head runat="server">
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    <title>Sports Pro</title>
+    <link href="Styles/Main.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
+        <title>Sports Pro</title>
     </asp:ContentPlaceHolder>
-    <style type="text/css">
-        .MainHeading
-        {
-            font-family: Arial, sans-serif;
-            font-size: 45pt;
-            font-weight: bold;
-            font-style: italic;
-            color: Blue;
-        }
-        .Subheading
-        {
-            font-size: x-large;
-            color: indianred;
-        }
-        .Table
-        {
-            width: 750px;
-        }
-        .ContactRow
-        {
-            height: 30px;
-        }
-        .SmallFont
-        {
-            font-size: x-small;
-        }
-    </style>
 </head>
-<body class="container">
+
+<body>
+<div class="container">
 <form id="form1" runat="server">
 
     <nav class="navbar navbar-default">
@@ -99,30 +75,20 @@
     <span class="MainHeading">SportsPro</span><br />
     <span class="Subheading">Sports management software for the sports enthusiast</span><br />
     </div>
-    <br />
         
-        <table class="Table" cellpadding="8" cellspacing="0">
-        <tr>
-            <td>
-                <br />
-                <asp:contentplaceholder id="body" runat="server">
-                </asp:contentplaceholder>
-                <br />
-            </td>
-        </tr>
-        <tr class="ContactRow">
-            <td>
-                <span class="SmallFont">
-                To contact us, call us at 1-559-555-2732 or email us at 
-                </span>
-                <asp:HyperLink ID="HyperLink4" runat="server" 
-                    NavigateUrl="mailto:sportspro@sportspro.com" 
-                    Font-Size="X-Small">sportspro@sportspro.com</asp:HyperLink>
-            </td>
-        </tr>
-    </table>
+    <asp:contentplaceholder id="body" runat="server">
+    </asp:contentplaceholder>
+
+    <div id="Footer">
+        <td>
+            To contact us, call us at 1-559-555-2732 or email us at 
+            <asp:HyperLink ID="HyperLink4" runat="server" 
+                NavigateUrl="mailto:sportspro@sportspro.com">sportspro@sportspro.com</asp:HyperLink>
+        </td>
+    </div>
+
 </form>
-    
+</div>
 </body>
     <script src="Scripts/jquery-3.1.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
