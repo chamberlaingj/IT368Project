@@ -37,72 +37,91 @@
     </style>
 </head>
 <body class="container">
-        <form id="form1" runat="server">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="ContactUs">SportsPro</a></li>
-          <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Customer Support
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="CustomerSupport_ProductRegistration">Register Products</a></li>
-          <li><a href="CustomerSupport_CustomerSurvey">Complete Customer Survey</a></li>
-        </ul>
-      </li>
-           <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Technician Support
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="TechSupport_CustomerIncidentDisplay">Display Customer Incidents</a></li>
-          <li><a href="TechSupport_IncidentUpdate">Update Incident</a></li>
-        </ul>
-      </li>
-          <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administration
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="ProductMaintenance">Maintain Products</a></li>
-          <li><a href="CustomerMaintenance">Maintain Customers</a></li>
-          <li><a href="TechnicianMaintenance">Maintain Technicians</a></li>
-            <li><a href="IncidentDisplay">Display Incidents</a></li>
-            <li><a href="CustomerDisplay">Display Customers</a></li>
-            <li><a href="TechnicianIncidentSummary">Display Incidents By Technician</a></li>
-        </ul>
-      </li>
-            <li class="active"><a href= "ContactUs" >Contact Us</a></li>
-        </ul>
-      </div>
-    </nav>
+<form id="form1" runat="server">
 
-   
-        <div class="jumbotron">
-        <span class="MainHeading">SportsPro</span><br />
-        <span class="Subheading">Sports management software for the sports enthusiast</span><br />
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SportsPro</a>
         </div>
-        <br />
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav">
         
-         <table class="Table" cellpadding="8" cellspacing="0">
-            <tr>
-                <td>
-                    <br />
-                    <asp:contentplaceholder id="body" runat="server">
-                    </asp:contentplaceholder>
-                    <br />
-                </td>
-            </tr>
-            <tr class="ContactRow">
-                <td>
-                    <span class="SmallFont">
-                    To contact us, call us at 1-559-555-2732 or email us at 
-                    </span>
-                    <asp:HyperLink ID="HyperLink4" runat="server" 
-                        NavigateUrl="mailto:sportspro@sportspro.com" 
-                        Font-Size="X-Small">sportspro@sportspro.com</asp:HyperLink>
-                </td>
-            </tr>
-        </table>
-    </form>
+            <!-- Customer Support Dropdown -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer Support <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="CustomerSupport_ProductRegistration">Register Products</a></li>
+                <li><a href="CustomerSupport_CustomerSurvey">Complete Customer Survey</a></li>
+              </ul>
+            </li>
+
+            <!-- Technician Support Dropdown -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technician Support <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="TechSupport_CustomerIncidentDisplay">Display Customer Incidents</a></li>
+                <li><a href="TechSupport_IncidentUpdate">Update Incident</a></li>
+              </ul>
+            </li>
+
+            <!-- Administration Dropdown -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administration <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="ProductMaintenance">Maintain Products</a></li>
+                <li><a href="CustomerMaintenance">Maintain Customers</a></li>
+                <li><a href="TechnicianMaintenance">Maintain Technicians</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="IncidentDisplay">Display Incidents</a></li>
+                <li><a href="CustomerDisplay">Display Customers</a></li>
+                <li><a href="TechnicianIncidentSummary">Display Incidents By Technician</a></li>
+              </ul>
+            </li>
+
+            <li><a href="ContactUs">Contact Us</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+   
+    <div class="jumbotron">
+    <span class="MainHeading">SportsPro</span><br />
+    <span class="Subheading">Sports management software for the sports enthusiast</span><br />
+    </div>
+    <br />
+        
+        <table class="Table" cellpadding="8" cellspacing="0">
+        <tr>
+            <td>
+                <br />
+                <asp:contentplaceholder id="body" runat="server">
+                </asp:contentplaceholder>
+                <br />
+            </td>
+        </tr>
+        <tr class="ContactRow">
+            <td>
+                <span class="SmallFont">
+                To contact us, call us at 1-559-555-2732 or email us at 
+                </span>
+                <asp:HyperLink ID="HyperLink4" runat="server" 
+                    NavigateUrl="mailto:sportspro@sportspro.com" 
+                    Font-Size="X-Small">sportspro@sportspro.com</asp:HyperLink>
+            </td>
+        </tr>
+    </table>
+</form>
     
 </body>
     <script src="Scripts/jquery-3.1.1.js"></script>
