@@ -63,10 +63,12 @@
                 <li><a href="TechnicianIncidentSummary">Display Incidents By Technician</a></li>
               </ul>
             </li>
+           </ul>
 
+           <ul class="nav navbar-nav navbar-right">
             <li><a href="ContactUs">Contact Us</a></li>
+           </ul>
 
-          </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
