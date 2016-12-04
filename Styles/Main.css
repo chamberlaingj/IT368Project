@@ -1,39 +1,133 @@
-﻿body
-{
+﻿body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
+    background-color: black;
 }
 
-.container
-{
+.container {
     max-width: 1200px;
-    background-color: #D3D3D3;
+    padding: 0px;
+    background-color: white;
 }
 
-.validator
-{
-    color: Red;
+#header {
+    text-align: center;
+    padding: 10px;
 }
 
-.MainHeading
-{
+.MainHeading {
     font-family: Arial, sans-serif;
     font-size: 45pt;
     font-weight: bold;
     font-style: italic;
-    color: Blue;
+    color: blue;
 }
 
-.Subheading
-{
+.Subheading {
     font-size: x-large;
-    color: Red;
+    color: red;
 }
 
-#Footer
-{
+.navbar {
+    border: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    background-color: red;
+}
+
+.navbar-default {
+  background-color: red;
+  border-color: blue;
+}
+
+.navbar-default .navbar-brand {
+    font-family: Arial, sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    font-style: italic;
+    color: blue;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: white;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-text {
+    color: blue;
+}
+
+.navbar-default .navbar-nav > li > a  {
+    color: blue;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: red;
+    background-color: blue;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: blue;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: blue;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form  {
+    border-color: blue;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: red;
+    background-color: blue;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: blue;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: red;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: blue;
+    background-color: red;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: red;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: blue;
+        background-color: red;
+    }
+}
+
+#content {
+    padding: 25px;
+}
+
+.validator {
+    color: red;
+}
+
+#footer {
+    background-color: grey;
     text-align: center;
     padding: 20px 0px 20px 0px;
 }

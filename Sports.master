@@ -15,6 +15,11 @@
 <div class="container">
 <form id="form1" runat="server">
 
+    <div id="header" class="hidden-xs">
+        <span class="MainHeading">SportsPro</span><br />
+        <span class="Subheading">Sports management software for the sports enthusiast</span><br />
+    </div>
+
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">SportsPro</a>
+          <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#">SportsPro</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,16 +77,14 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-   
-    <div class="jumbotron">
-    <span class="MainHeading">SportsPro</span><br />
-    <span class="Subheading">Sports management software for the sports enthusiast</span><br />
-    </div>
         
-    <asp:contentplaceholder id="body" runat="server">
-    </asp:contentplaceholder>
+    <div id="content">
+        <asp:contentplaceholder id="body" runat="server">
+        </asp:contentplaceholder>
+    </div>
+ 
 
-    <div id="Footer">
+    <div id="footer">
         <td>
             To contact us, call us at 1-559-555-2732 or email us at 
             <asp:HyperLink ID="HyperLink4" runat="server" 
