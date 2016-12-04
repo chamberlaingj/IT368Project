@@ -1,0 +1,152 @@
+﻿$color1: blue;
+$color2: red;
+$color3: white;
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0px;
+    background-color: $color3;
+}
+
+#header {
+    text-align: center;
+    padding: 10px;
+}
+
+.MainHeading {
+    font-family: Arial, sans-serif;
+    font-size: 45pt;
+    font-weight: bold;
+    font-style: italic;
+    color: $color1;
+}
+
+.Subheading {
+    font-size: x-large;
+    color: $color2;
+}
+
+.navbar {
+    border: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    background-color: $color2;
+}
+
+.navbar-default {
+  background-color: $color2;
+  border-color: $color1;
+}
+
+.navbar-default .navbar-brand {
+    font-family: Arial, sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    font-style: italic;
+    color: $color1;
+    &:hover {
+        color: $color3;
+        background-color: transparent;
+    }
+    &:focus {
+        color: $color3;
+        background-color: transparent;
+    }
+}
+
+.navbar-default .navbar-text {
+    color: $color1;
+}
+
+.navbar-default .navbar-nav > li > a  {
+    color: $color1;
+    &:hover {
+        color: $color2;
+        background-color: $color1;
+    }
+    &:focus {
+        color: $color2;
+        background-color: $color1;
+    }
+}
+
+.navbar-default .navbar-toggle {
+    border-color: $color1;
+    &:hover {
+        color: $color3;
+    }
+    &:focus {
+        color: $color3;
+    }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: $color1;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form  {
+    border-color: $color1;
+}
+
+.navbar-default .navbar-nav > .open > a {
+    color: $color2;
+    background-color: $color1;
+    &:hover {
+        color: $color2;
+        background-color: $color1;
+    }
+    &:focus {
+        color: $color2;
+        background-color: $color1;
+    }
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: $color1;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: $color2;
+    &:hover {
+        color: $color1;
+        background-color: $color2;
+    }
+    &:focus {
+        color: $color1;
+        background-color: $color2;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: $color2;
+        &:hover {
+            color: $color1;
+            background-color: $color2;
+        }
+        &:focus {
+            color: $color1;
+            background-color: $color2;
+        }
+    }
+}
+
+#content {
+    padding: 25px;
+}
+
+.validator {
+    color: $color2;
+}
+
+#footer {
+    background-color: grey;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
