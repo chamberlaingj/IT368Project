@@ -15,6 +15,7 @@
         </asp:AccessDataSource>
         <br />
         <br />
+        <div class="display-box">
         <table>
             <tr>
                 <td class="style1">
@@ -42,9 +43,10 @@
             </tr>
         </table>
         <br />
-        <asp:Button ID="btnAdd" runat="server" Text="Add to Contact List" Width="150px" onclick="btnAdd_Click" />
+        <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add to Contact List" Width="150px" onclick="btnAdd_Click" />
         &nbsp;
-        <asp:Button ID="btnDisplay" runat="server" PostBackUrl="ContactDisplay" Text="Display Contact List" Width="150px" />
+        <asp:Button ID="btnDisplay" CssClass="btn btn-default-inv" runat="server" PostBackUrl="ContactDisplay" Text="Display Contact List" Width="150px" />
+        </div>
         <br />
         <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red"></asp:Label>
 

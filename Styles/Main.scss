@@ -1,6 +1,7 @@
 ﻿$nav-color1: white;
 $nav-color2: black;
 $nav-color3: white;
+$main-color: #000099;
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -23,7 +24,7 @@ body {
     font-size: 45pt;
     font-weight: bold;
     font-style: italic;
-    color: #000099;
+    color: $main-color;
 }
 
 .Subheading {
@@ -143,6 +144,35 @@ body {
 
 th, td {
     padding: 5px;
+}
+
+.display-box {
+    display: inline-block;
+    background-color: $main-color;
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+    padding: 5px;
+    color: white;
+    .black-type {
+        color: black;
+    }
+}
+
+.btn-default-inv {
+  color: white;
+  background-color: black;
+  border-color: white;
+  &:hover {
+      color: black;
+      background-color: white;
+      border-color: black;
+  }
+  &:focus {
+      color: black;
+      background-color: white;
+      border-color: black;
+  }
 }
 
 .validator {

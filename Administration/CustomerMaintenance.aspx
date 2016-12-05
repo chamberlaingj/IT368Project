@@ -127,7 +127,7 @@
                             <ControlStyle Width="200px" />
                         </asp:BoundField>
                         <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True"
-                            ShowInsertButton="True" ItemStyle-HorizontalAlign="Center" />
+                            ShowInsertButton="True" ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="btn btn-default-inv" />
                     </Fields>
                 </asp:DetailsView>
 

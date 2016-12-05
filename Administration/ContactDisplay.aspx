@@ -4,26 +4,23 @@
     <title>Contact Display</title>
 </asp:Content>
 <asp:Content ID="body1" ContentPlaceHolderID="body" runat="server">
-    <div>
-        <h1>SportsPro</h1><br />
-        <h2>Sports management software for the sports enthusiast</h2>
-        <br />
+    <div class="display-box">
         Contact list:<br />
         <table>
             <tr>
-                <td class="style1">
+                <td class="black-type">
                     <asp:ListBox ID="lstContacts" runat="server" Height="120px" Width="450px"></asp:ListBox>
                 </td>
-                <td class="style1">
-                    <asp:Button ID="btnRemove" runat="server" Text="Remove Contact" Width="120px" 
+                <td class="style2">
+                    <asp:Button ID="btnRemove" CssClass="btn btn-warning" runat="server" Text="Remove Contact" Width="120px" 
                         onclick="btnRemove_Click" /><br />
                     <br />
-                    <asp:Button ID="btnEmpty" runat="server" Text="Empty List" Width="120px" 
+                    <asp:Button ID="btnEmpty" CssClass="btn btn-danger" runat="server" Text="Empty List" Width="120px" 
                         onclick="btnEmpty_Click" />
                 </td>
             </tr>
         </table>
         <br />
-        <asp:Button ID="btnSelect" runat="server" Text="Select Additional Customers" PostBackUrl="CustomerDisplay" Width="200px" /><br />
+        <asp:Button ID="btnSelect" CssClass="btn btn-default-inv" runat="server" Text="Select Additional Customers" PostBackUrl="CustomerDisplay" Width="200px" /><br />
     </div>
 </asp:Content>
