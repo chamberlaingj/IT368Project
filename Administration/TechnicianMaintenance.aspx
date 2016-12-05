@@ -46,11 +46,11 @@
         <tr>
             <td class="style1">
                 <asp:FormView ID="fvTechnician" runat="server" DataKeyNames="TechID" 
-                    DataSourceID="SqlDataSource2" BorderColor="Blue" BorderStyle="Solid" 
-                    BorderWidth="1px" CellPadding="4" ForeColor="#333333" Width="375px" 
+                    DataSourceID="SqlDataSource2" BorderColor="Black" BorderStyle="Solid" 
+                    BorderWidth="3px" CellPadding="4" ForeColor="White" Width="375px" 
                     onitemdeleted="fvTechnician_Deleted" 
                     oniteminserted="fvTechnician_Inserted" 
-                    onitemupdated="fvTechnician_Updated">
+                    onitemupdated="fvTechnician_Updated" BackColor="#000099" CellSpacing="2" GridLines="Both">
                     <EditItemTemplate>
                         <table>
                             <tr>
@@ -92,11 +92,15 @@
                             </tr>
                         </table>
                         <br />
-                        <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
+                        <center>
+                            <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
                             Text="Update"></asp:Button>
-                        <asp:Button ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                            <asp:Button ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
                             Text="Cancel"></asp:Button>
+                        </center>
+                        
                     </EditItemTemplate>
+
                     <InsertItemTemplate>
                         <table>
                             <tr>
@@ -131,10 +135,12 @@
                             </tr>
                         </table>
                         <br />
-                        <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
+                        <center>
+                            <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
                             Text="Insert"></asp:Button>
-                        <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                            <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
                             Text="Cancel"></asp:Button>
+                        </center>
                     </InsertItemTemplate>
                     <ItemTemplate>
                         <table>
@@ -164,19 +170,21 @@
                             </tr>
                         </table>
                         <br />
-                        <asp:Button ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
+                        <center>
+                            <asp:Button ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
                             Text="Edit"></asp:Button>
-                        <asp:Button ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete"
+                            <asp:Button ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete"
                             Text="Delete"></asp:Button>
-                        <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New"
+                            <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New"
                             Text="New"></asp:Button>
+                        </center>
                     </ItemTemplate>
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <EditRowStyle BackColor="CornflowerBlue" Font-Bold="True" ForeColor="White" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <InsertRowStyle BackColor="CornflowerBlue" Font-Bold="True" ForeColor="White" />
+                    <FooterStyle BackColor="#000099" />
+                    <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <RowStyle BackColor="#000099" />
+                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <InsertRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                 </asp:FormView>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>"
                     SelectCommand="SELECT [TechID], [Name], [Email], [Phone] FROM [Technicians] WHERE ([TechID] = ?)" ConflictDetection="CompareAllValues" 

@@ -16,7 +16,7 @@
   font-size: 45pt;
   font-weight: bold;
   font-style: italic;
-  color: blue; }
+  color: #000099; }
 
 .Subheading {
   font-size: x-large;
@@ -26,18 +26,18 @@
   border: 0px;
   border-radius: 0px;
   margin: 0px;
-  background-color: red; }
+  background-color: black; }
 
 .navbar-default {
-  background-color: red;
-  border-color: blue; }
+  background-color: black;
+  border-color: white; }
 
 .navbar-default .navbar-brand {
   font-family: Arial, sans-serif;
   font-size: 20pt;
   font-weight: bold;
   font-style: italic;
-  color: blue; }
+  color: white; }
   .navbar-default .navbar-brand:hover {
     color: white;
     background-color: transparent; }
@@ -46,71 +46,75 @@
     background-color: transparent; }
 
 .navbar-default .navbar-text {
-  color: blue; }
+  color: white; }
 
 .navbar-default .navbar-nav > li > a {
-  color: blue; }
+  color: white; }
   .navbar-default .navbar-nav > li > a:hover {
-    color: red;
-    background-color: blue; }
+    color: black;
+    background-color: white; }
   .navbar-default .navbar-nav > li > a:focus {
-    color: red;
-    background-color: blue; }
+    color: black;
+    background-color: white; }
 
 .navbar-default .navbar-toggle {
-  border-color: blue; }
+  border-color: white; }
   .navbar-default .navbar-toggle:hover {
     color: white; }
   .navbar-default .navbar-toggle:focus {
     color: white; }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: blue; }
+  background-color: white; }
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: blue; }
+  border-color: white; }
 
 .navbar-default .navbar-nav > .open > a {
-  color: red;
-  background-color: blue; }
+  color: black;
+  background-color: white; }
   .navbar-default .navbar-nav > .open > a:hover {
-    color: red;
-    background-color: blue; }
+    color: black;
+    background-color: white; }
   .navbar-default .navbar-nav > .open > a:focus {
-    color: red;
-    background-color: blue; }
+    color: black;
+    background-color: white; }
 
 .navbar-default .navbar-nav .open .dropdown-menu {
-  background-color: blue; }
+  background-color: white; }
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: red; }
+  color: black; }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
-    color: blue;
-    background-color: red; }
+    color: white;
+    background-color: black; }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: blue;
-    background-color: red; }
+    color: white;
+    background-color: black; }
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: red; }
+    color: black; }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
-      color: blue;
-      background-color: red; }
+      color: white;
+      background-color: black; }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-      color: blue;
-      background-color: red; } }
+      color: white;
+      background-color: black; } }
 
 #content {
   padding: 25px; }
 
+th, td {
+  padding: 5px; }
+
 .validator {
-  color: red; }
+  color: black; }
 
 #footer {
-  background-color: grey;
+  background-color: dimgrey;
+  color: white;
   text-align: center;
   padding: 20px 0px 20px 0px; }
 

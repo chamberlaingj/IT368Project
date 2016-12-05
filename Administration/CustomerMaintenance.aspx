@@ -29,10 +29,9 @@
         <tr>
             <td class="auto-style1" valign="top">
                 <asp:GridView ID="maintainCustomers" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                    BorderColor="Blue" BorderStyle="Solid" BorderWidth="1px" CellPadding="4" DataKeyNames="CustomerID"
-                    DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="375px" SelectedIndex="0" PageSize="8" AllowSorting="True">
-                    <PagerSettings Mode="NextPreviousFirstLast" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    BorderColor="Black" BorderStyle="Solid" BorderWidth="3px" CellPadding="5" CellSpacing="5" DataKeyNames="CustomerID"
+                    DataSourceID="SqlDataSource1" ForeColor="Black" Width="375px" SelectedIndex="0" PageSize="8" AllowSorting="True" BackColor="Black">
+                    <FooterStyle BackColor="#CCCCCC" />
 
 
 
@@ -56,14 +55,16 @@
 
 
 
-                    <RowStyle BackColor="#EFF3FB" Font-Size="Small" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <SelectedRowStyle BackColor="CornflowerBlue" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="Blue" Font-Names="Arial" Font-Size="Small" ForeColor="White"
+                    <RowStyle BackColor="White" Font-Size="Small" />
+                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="Black" Font-Names="Arial" Font-Size="Small" ForeColor="White"
                         HorizontalAlign="Center" />
-                    <HeaderStyle BackColor="Blue" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
+                    <HeaderStyle BackColor="Black" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
                         ForeColor="White" />
-                    <AlternatingRowStyle BackColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>"
                     SelectCommand="SELECT [CustomerID], [Name], [City], [State] FROM [Customers] ORDER BY [Name]" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>">
@@ -73,61 +74,63 @@
             <td class="style3" valign="top">
                 <asp:DetailsView ID="dtlCustomers" runat="server" 
                     DataSourceID="SqlDataSource2" Height="50px"
-                    Width="255px" AutoGenerateRows="False" BackColor="White" Color="Black"
-                    BorderColor="Blue" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 
-                    CellSpacing="2" GridLines="None" onitemdeleted="dtlCustomers_Deleted" 
+                    Width="300px" AutoGenerateRows="False" Color="Black" CellPadding="5" CellSpacing="5" onitemdeleted="dtlCustomers_Deleted" 
                     oniteminserted="dtlCustomers_Inserted" 
-                    onitemupdated="dtlCustomers_Updated">
-                    <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
-                    <EditRowStyle BackColor="CornflowerBlue" Font-Bold="True" ForeColor="White" />
-                    <RowStyle BackColor="#EFF3FB" ForeColor="Black" Font-Size="Small" />
-                    <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+                    onitemupdated="dtlCustomers_Updated" ForeColor="Black" BackColor="#000099" BorderColor="Black" BorderStyle="Solid" BorderWidth="3px">
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <RowStyle BackColor="White" Font-Size="Small" Height="20px" />
+                    <AlternatingRowStyle Height="20px" />
+                    <CommandRowStyle BackColor="#000099" />
+                    <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <FieldHeaderStyle BackColor="#000099" ForeColor="White" />
                     <Fields>
                         <asp:BoundField DataField="CustomerID" HeaderText="ID:" InsertVisible="False"
                             ReadOnly="True" SortExpression="CustomerID">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
+                            <ItemStyle Width="200px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="Name" HeaderText="Name:" SortExpression="Name">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
-                            <ControlStyle Width="180px" />
+                            <ItemStyle Width="200px" />
+                            <ControlStyle Width="200px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="Address" HeaderText="Address:" SortExpression="Address">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
-                            <ControlStyle Width="180px" />
+                            <ItemStyle Width="200px" />
+                            <ControlStyle Width="200px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="City" HeaderText="City:" SortExpression="City">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
-                            <ControlStyle Width="180px" />
+                            <ItemStyle Width="200px" />
+                            <ControlStyle Width="200px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="State" HeaderText="State:" SortExpression="State">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
+                            <ItemStyle Width="200px" />
                             <ControlStyle Width="40px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="ZipCode" HeaderText="Zip code:" SortExpression="ZipCode">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
+                            <ItemStyle Width="200px" />
                             <ControlStyle Width="100px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="Phone" HeaderText="Phone:" SortExpression="Phone">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
+                            <ItemStyle Width="200px" />
                             <ControlStyle Width="100px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="Email" HeaderText="Email:" SortExpression="Email">
                             <HeaderStyle Width="65px" />
-                            <ItemStyle Width="190px" />
-                            <ControlStyle Width="180px" />
+                            <ItemStyle Width="200px" />
+                            <ControlStyle Width="200px" />
                         </asp:BoundField>
                         <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True"
-                            ShowInsertButton="True" />
+                            ShowInsertButton="True" ItemStyle-HorizontalAlign="Center" />
                     </Fields>
-                    <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
                 </asp:DetailsView>
+
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
                     ConflictDetection="CompareAllValues"
                     ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" 
