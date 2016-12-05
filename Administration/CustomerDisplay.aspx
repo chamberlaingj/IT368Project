@@ -6,9 +6,6 @@
 </asp:Content>
 <asp:Content ID="body1" ContentPlaceHolderID="body" runat="server">
     <div>
-        <h1>SportsPro</h1><br />
-        <h2>Sports management software for the sports enthusiast</h2>
-        <br />
         Select a customer:&nbsp;
         <asp:DropDownList ID="ddlCustomers" runat="server" DataSourceID="AccessDataSource1"
             DataTextField="Name" DataValueField="CustomerID" AutoPostBack="True">
