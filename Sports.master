@@ -79,8 +79,10 @@
     </nav>
         
     <div id="content">
+        <center>
         <asp:contentplaceholder id="body" runat="server">
         </asp:contentplaceholder>
+        </center>
     </div>
  
 
