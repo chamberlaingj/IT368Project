@@ -13,14 +13,12 @@ public static class TechnicianDB
     public static IEnumerable GetAllTechnicians()
     {
         string selectStatement = "SELECT TechID, Name " + "FROM Technicians ORDER BY Name";
-        OleDbDataAdapter oledbAdapter = new OleDbDataAdapter();
-        string connDB = ConfigurationManager.ConnectionStrings["ConnectionString1"].ConnectionString;
-        OleDbConnection con = new OleDbConnection(connDB);
-        OleDbCommand command = new OleDbCommand(selectStatement, con);
+        SqlConnection con = new SqlConnection(TechSupportDB.GetConnectionString());
+        
+        SqlCommand command = new SqlCommand(selectStatement, con);
         con.Open();
-        OleDbDataReader reader = command.ExecuteReader();
+        SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
         return reader;
-
 
 
 

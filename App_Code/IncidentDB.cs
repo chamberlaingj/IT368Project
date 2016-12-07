@@ -12,14 +12,12 @@ public class IncidentDB
     [DataObjectMethod(DataObjectMethodType.Select)]
     public static IEnumerable GetOpenTechIncidents(int techID)
     {
-        string selectStatement = "SELECT DateOpened, ProductCode, Name " + "FROM Incidents JOIN Customers " + "ON Incidents.CustomerID = Customers.CustomerID " + "WHERE DateClosed IS NULL " + "AND TechID = ? " +
-           "ORDER BY DateOpened";
-        OleDbDataAdapter oledbAdapter = new OleDbDataAdapter();
-        string connDB = ConfigurationManager.ConnectionStrings["ConnectionString1"].ConnectionString;
-        OleDbConnection con = new OleDbConnection(connDB);
-        OleDbCommand command = new OleDbCommand(selectStatement, con);
+        string selectStatement = "SELECT DateOpened, ProductCode, Name " + "FROM Incidents JOIN Customers " + "ON Incidents.CustomerID = Customers.CustomerID " + "WHERE DateClosed IS NULL " + "AND TechID = @TechID " +"ORDER BY DateOpened";
+        SqlConnection con = new SqlConnection(TechSupportDB.GetConnectionString());
+        SqlCommand command = new SqlCommand(selectStatement, con);
+        command.Parameters.AddWithValue("TechID", techID);
         con.Open();
-        OleDbDataReader reader = command.ExecuteReader();
+        SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
         return reader;
 
     }

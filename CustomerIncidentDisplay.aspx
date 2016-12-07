@@ -26,7 +26,7 @@
         DataTextField="Name" DataValueField="CustomerID" Width="141px" AutoPostBack="True">
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>"
-        SelectCommand="SELECT [CustomerID], [Name] FROM [Customers] ORDER BY [Name]" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>">
+        SelectCommand="SELECT [CustomerID], [Name] FROM [Customers] ORDER BY [Name]">
     </asp:SqlDataSource>
     <br />
     <br />
@@ -79,9 +79,9 @@
                           ON Incidents.TechID = Technicians.TechID)
                        INNER JOIN Products
                           ON Incidents.ProductCode = Products.ProductCode
-                       WHERE (Incidents.CustomerID = ?)" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>">
+                       WHERE (Incidents.CustomerID = @CustomerID)">
         <SelectParameters>
-            <asp:ControlParameter ControlID="ddlCustomers" Name="?" PropertyName="SelectedValue" />
+            <asp:ControlParameter ControlID="ddlCustomers" Name="CustomerID" PropertyName="SelectedValue" />
         </SelectParameters>
     </asp:SqlDataSource>
 </asp:Content>

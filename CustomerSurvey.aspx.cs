@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using SportsPro.Models;
 
 public partial class CustomerSurvey : System.Web.UI.Page
 {

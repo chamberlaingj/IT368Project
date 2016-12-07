@@ -67,7 +67,7 @@
                     <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>"
-                    SelectCommand="SELECT [CustomerID], [Name], [City], [State] FROM [Customers] ORDER BY [Name]" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>">
+                    SelectCommand="SELECT [CustomerID], [Name], [City], [State] FROM [Customers] ORDER BY [Name]">
                 </asp:SqlDataSource>
             </td>
             <td class="style2"></td>
@@ -137,11 +137,14 @@
                     DeleteCommand="DELETE * FROM [Registrations] WHERE [CustomerID] = @original_CustomerID"
                     InsertCommand="INSERT INTO [Customers] ([Name], [Address], [City], [State], [ZipCode], [Phone], [Email]) VALUES (@Name, @Address, @City, @State, @ZipCode, @Phone, @Email)"
                     OldValuesParameterFormatString="original_{0}" 
-                    SelectCommand="SELECT [CustomerID], [Name], [Address], [City], [State], [ZipCode], [Phone], [Email] FROM [Customers] WHERE ([CustomerID] = ?)"
-                    UpdateCommand="UPDATE [Customers] SET [Name] = @Name, [Address] = @Address, [City] = @City, [State] = @State, [ZipCode] = @ZipCode, [Phone] = @Phone, [Email] = @Email WHERE [CustomerID] = @original_CustomerID AND [Name] = @original_Name AND [Address] = @original_Address AND [City] = @original_City AND [State] = @original_State AND [ZipCode] = @original_ZipCode AND [Phone] = @original_Phone AND [Email] = @original_Email" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>">
+                    SelectCommand="SELECT [CustomerID], [Name], [Address], [City], [State], [ZipCode], [Phone], [Email] FROM [Customers] WHERE ([CustomerID] = @CustomerID)"
+                    UpdateCommand="UPDATE [Customers] SET [Name] = @Name, [Address] = @Address, [City] = @City, [State] = @State, [ZipCode] = @ZipCode, [Phone] = @Phone, [Email] = @Email WHERE [CustomerID] = @original_CustomerID AND [Name] = @original_Name AND [Address] = @original_Address AND [City] = @original_City AND [State] = @original_State AND [ZipCode] = @original_ZipCode AND [Phone] = @original_Phone AND [Email] = @original_Email">
                     <DeleteParameters>
                         <asp:Parameter Name="original_CustomerID" Type="Int32" />
                     </DeleteParameters>
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="maintainCustomers" Name="CustomerID" PropertyName="SelectedValue" />
+                    </SelectParameters>
                     <UpdateParameters>
                         <asp:Parameter Name="Name" Type="String" />
                         <asp:Parameter Name="Address" Type="String" />
@@ -159,10 +162,6 @@
                         <asp:Parameter Name="original_Phone" Type="String" />
                         <asp:Parameter Name="original_Email" Type="String" />
                     </UpdateParameters>
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="maintainCustomers" Name="CustomerID" PropertyName="SelectedValue"
-                            Type="Int32" />
-                    </SelectParameters>
                     <InsertParameters>
                         <asp:Parameter Name="Name" Type="String" />
                         <asp:Parameter Name="Address" Type="String" />

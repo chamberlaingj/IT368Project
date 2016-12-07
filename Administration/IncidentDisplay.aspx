@@ -161,6 +161,6 @@
 
 
     </asp:ListView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>" SelectCommand="SELECT Products.Name AS Product, Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.DateOpened, Incidents.DateClosed, Incidents.Title, Incidents.Description FROM (((Incidents INNER JOIN Customers ON Incidents.CustomerID = Customers.CustomerID) INNER JOIN Products ON Incidents.ProductCode = Products.ProductCode) INNER JOIN Technicians ON Incidents.TechID = Technicians.TechID) ORDER BY Incidents.DateOpened"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT Products.Name AS Product, Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.DateOpened, Incidents.DateClosed, Incidents.Title, Incidents.Description FROM (((Incidents INNER JOIN Customers ON Incidents.CustomerID = Customers.CustomerID) INNER JOIN Products ON Incidents.ProductCode = Products.ProductCode) INNER JOIN Technicians ON Incidents.TechID = Technicians.TechID) ORDER BY Incidents.DateOpened"></asp:SqlDataSource>
 </asp:Content>
 

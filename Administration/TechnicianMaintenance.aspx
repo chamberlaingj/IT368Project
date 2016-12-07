@@ -39,7 +39,7 @@
     <asp:DropDownList ID="ddlTechnicians" runat="server" DataSourceID="SqlDataSource1"
         DataTextField="Name" DataValueField="TechID" Width="150px" AutoPostBack="True">
     </asp:DropDownList><asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>"
-        SelectCommand="SELECT [TechID], [Name] FROM [Technicians] ORDER BY [Name]" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>"></asp:SqlDataSource>
+        SelectCommand="SELECT [TechID], [Name] FROM [Technicians] ORDER BY [Name]"></asp:SqlDataSource>
     <br />
     <br />
     <table>
@@ -187,20 +187,19 @@
                     <InsertRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                 </asp:FormView>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>"
-                    SelectCommand="SELECT [TechID], [Name], [Email], [Phone] FROM [Technicians] WHERE ([TechID] = ?)" ConflictDetection="CompareAllValues" 
+                    SelectCommand="SELECT [TechID], [Name], [Email], [Phone] FROM [Technicians] WHERE ([TechID] = @TechID)" ConflictDetection="CompareAllValues" 
                     DeleteCommand="DELETE FROM [Technicians] WHERE [TechID] = @original_TechID AND [Name] = @original_Name AND [Email] = @original_Email AND [Phone] = @original_Phone" 
                     InsertCommand="INSERT INTO [Technicians] ([Name], [Email], [Phone]) VALUES (@Name, @Email, @Phone)" OldValuesParameterFormatString="original_{0}" 
-                    UpdateCommand="UPDATE [Technicians] SET [Name] = @Name, [Email] = @Email, [Phone] = @Phone WHERE [TechID] = @original_TechID AND [Name] = @original_Name AND [Email] = @original_Email AND [Phone] = @original_Phone" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="ddlTechnicians" Name="TechID" 
-                            PropertyName="SelectedValue" Type="Int32" />
-                    </SelectParameters>
+                    UpdateCommand="UPDATE [Technicians] SET [Name] = @Name, [Email] = @Email, [Phone] = @Phone WHERE [TechID] = @original_TechID AND [Name] = @original_Name AND [Email] = @original_Email AND [Phone] = @original_Phone">
                     <DeleteParameters>
                         <asp:Parameter Name="original_TechID" Type="Int32" />
                         <asp:Parameter Name="original_Name" Type="String" />
                         <asp:Parameter Name="original_Email" Type="String" />
                         <asp:Parameter Name="original_Phone" Type="String" />
                     </DeleteParameters>
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="ddlTechnicians" Name="TechID" PropertyName="SelectedValue" />
+                    </SelectParameters>
                     <UpdateParameters>
                         <asp:Parameter Name="Name" Type="String" />
                         <asp:Parameter Name="Email" Type="String" />
