@@ -11,6 +11,14 @@ public partial class ProductRegistration : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["Role"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+
+        }
         if (!IsPostBack)
         {
             ListItem productItem = new ListItem("--Select a product--", "None");
