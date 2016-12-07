@@ -4,6 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
+     <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script type="text/javascript" language="javascript">
+       
+        </script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Styles/Main.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
@@ -14,7 +19,6 @@
 <body>
 <div class="container">
 <form id="form1" runat="server">
-
     <div id="header" class="hidden-xs">
         <span class="MainHeading">SportsPro</span><br />
         <span class="Subheading">Sports management software for the sports enthusiast</span><br />
@@ -72,6 +76,7 @@
 
            <ul class="nav navbar-nav navbar-right">
             <li><a href="ContactUs">Contact Us</a></li>
+            <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
            </ul>
 
         </div><!-- /.navbar-collapse -->
@@ -97,6 +102,7 @@
 </form>
 </div>
 </body>
-    <script src="Scripts/jquery-3.1.1.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
+   
+  
+</>
 </html>
