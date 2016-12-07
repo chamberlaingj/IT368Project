@@ -9,7 +9,7 @@
     <div>
         Enter your customer ID: &nbsp;
         <asp:TextBox ID="txtCustomerID" runat="server" Width="80px"></asp:TextBox>&nbsp;
-        <asp:Button ID="btnGetIncidents" runat="server" Text="Get Incidents" ValidationGroup="CustomerID" onclick="btnGetIncidents_Click" />
+        <asp:Button ID="btnGetIncidents" CssClass="btn btn-default-inv" runat="server" Text="Get Incidents" ValidationGroup="CustomerID" onclick="btnGetIncidents_Click" />
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCustomerID" Display="Dynamic" ErrorMessage="You must enter a customer ID." ValidationGroup="CustomerID" ForeColor="Red"></asp:RequiredFieldValidator>
         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtCustomerID" Display="Dynamic" ErrorMessage="Customer ID must be an integer." Operator="DataTypeCheck" Type="Integer" ValidationGroup="CustomerID" ForeColor="Red"></asp:CompareValidator><br />
@@ -88,7 +88,7 @@
             </tr>
         </table>
         <br />
-        <asp:Button ID="btnSubmit" CssClass="btn btn-default-inv" runat="server" Text="Submit" Enabled="False" 
+        <asp:Button ID="btnSubmit" CssClass="btn btn-success" runat="server" Text="Submit" Enabled="False" 
             ValidationGroup="Submit" onclick="btnSubmit_Click" /></div>
         </center>
         </div>

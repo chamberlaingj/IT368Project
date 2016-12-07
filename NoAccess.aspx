@@ -9,5 +9,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <span class="style1">You do not have access to the requested resource. The application must be aborted.</span><br />
+    <span class="style1">You do not have permission to access the page requested.</span>
+    <br /><br />
+    <asp:LinkButton ID="btnHome" CssClass="btn btn-default-inv" runat="server" href="Default.aspx">Return to Home Page</asp:LinkButton>
 </asp:Content>

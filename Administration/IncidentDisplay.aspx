@@ -6,8 +6,8 @@
     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
          <LayoutTemplate>
              <table ID="itemHeadingsr" runat="server" cellspacing="0" cellpadding="0"
-                style="border-color: Blue;font-size: small">
-                <tr style="background-color:Blue;color: White;font-weight:bold;
+                style="border-color: Black;font-size: small">
+                <tr style="background-color:Black;color: White;font-weight:bold;
                     font-family: Verdana, Arial, Helvetica, sans-serif">
                     <th id="Th1" runat="server" style="width: 225px" align="left">Product</th>
                     <th id="Th2" runat="server" style="width: 200px" align="left">Customer</th>

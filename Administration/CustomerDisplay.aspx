@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Sports.master" CodeFile="CustomerDisplay.aspx.cs" Inherits="CustomerDisplay" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Customer Display</title>
     </asp:Content>
@@ -13,7 +12,7 @@
         <br />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT * FROM [Customers] ORDER BY [Name]"></asp:SqlDataSource>
         <br />
-
+        <div class="display-box">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="SqlDataSource2">
             <Columns>
                 <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" InsertVisible="False" ReadOnly="True" SortExpression="CustomerID" />
@@ -31,7 +30,6 @@
                 <asp:ControlParameter ControlID="ddlCustomers" Name="CustomerID" PropertyName="SelectedValue" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <div class="display-box">
         <br />
         <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add to Contact List" Width="150px" onclick="btnAdd_Click" />
         &nbsp;

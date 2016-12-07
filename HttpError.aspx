@@ -9,5 +9,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <span class="style1">An unexpected HTTP error has occurred. The application must be aborted.</span><br />
+    <span class="style1">An unexpected HTTP error has occurred.</span>
+    <br /><br />
+    <asp:LinkButton ID="btnHome" CssClass="btn btn-default-inv" runat="server" href="Default.aspx">Return to Home Page</asp:LinkButton>
 </asp:Content>
