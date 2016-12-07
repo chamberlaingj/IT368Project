@@ -21,8 +21,9 @@ public partial class ProductMaintenance : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            lblErrorMessage.Text = "A database error has occurred. "
-                + "Message: " + ex.Message;
+            Session["Exception"] = ex;
+            Session["Page"] = "~/Admin/ProductMaintenance.aspx";
+            Response.Redirect("~/ErrorMessage.aspx");
         }
     }
 
