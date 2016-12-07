@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Incident Update" Language="C#" MasterPageFile="~/Sports.master" AutoEventWireup="true" CodeFile="IncidentUpdate.aspx.cs" Inherits="IncidentUpdate" %>
+﻿<%@ Page Title="Incident Update" Language="C#" MasterPageFile="~/Sports.master" AutoEventWireup="true" CodeFile="ContactUs.aspx.cs" Inherits="ContactUs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -65,14 +65,17 @@
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
         OldValuesParameterFormatString="original_{0}" TypeName="IncidentDB" 
-        SelectMethod="GetOpenTechIncidents" 
+        SelectMethod="GetCustomerIncidents" UpdateMethod="UpdateIncident" 
         ConflictDetection="CompareAllValues">
+        <UpdateParameters>
+            <asp:Parameter Name="original_Incident" Type="Object" />
+            <asp:Parameter Name="incident" Type="Object" />
+        </UpdateParameters>
         <SelectParameters>
-            <asp:ControlParameter ControlID="ddlCustomers" Name="techID" PropertyName="SelectedValue"
+            <asp:ControlParameter ControlID="ddlCustomers" Name="CustomerID" PropertyName="SelectedValue"
                 Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <br />
     <asp:Label ID="lblErrorMessage" runat="server" EnableViewState="False" ForeColor="Red"></asp:Label><br />
 </asp:Content>
-
