@@ -13,8 +13,8 @@
     <br />
     <br />
     <asp:GridView ID="grdIncidents" runat="server" DataSourceID="ObjectDataSource2" 
-        AutoGenerateColumns="False" BorderColor="Blue" BorderStyle="Solid" BorderWidth="1px" 
-        CellPadding="4" ForeColor="#333333" GridLines="None" Width="850px">
+        AutoGenerateColumns="False" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" 
+        CellPadding="3" ForeColor="Black" GridLines="Vertical" Width="850px" BackColor="White">
         <Columns>
             <asp:BoundField DataField="IncidentID" HeaderText="ID" ReadOnly="True">
                 <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="25px" />
@@ -50,18 +50,21 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:CommandField ButtonType="Button" ShowEditButton="True" >
+            <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-warning">
                 <ItemStyle VerticalAlign="Top" />
             </asp:CommandField>
         </Columns>
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <RowStyle BackColor="#EFF3FB" Font-Size="Small" />
-        <EditRowStyle BackColor="CornflowerBlue" />
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <HeaderStyle BackColor="Blue" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
+        <FooterStyle BackColor="#CCCCCC" />
+        <RowStyle Font-Size="Small" />
+        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="Black" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
             ForeColor="White" />
-        <AlternatingRowStyle BackColor="White" />
+        <AlternatingRowStyle BackColor="#CCCCCC" />
+        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+        <SortedAscendingHeaderStyle BackColor="#808080" />
+        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
         OldValuesParameterFormatString="original_{0}" TypeName="IncidentDB" 
