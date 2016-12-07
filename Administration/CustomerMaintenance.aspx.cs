@@ -44,7 +44,14 @@ public partial class CustomerMaintenance : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["Role"] != null && Session["Role"].Equals("admin"))
+        {
 
+        }
+        else
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 
     protected void dtlCustomers_PageIndexChanging(object sender, DetailsViewPageEventArgs e)

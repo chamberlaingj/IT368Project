@@ -48,4 +48,15 @@ public partial class TechnicianMaintenance : System.Web.UI.Page
             ddlTechnicians.DataBind();
         }
     }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["Role"] != null && Session["Role"].Equals("admin"))
+        {
+
+        }
+        else
+        {
+            Response.Redirect("Default.aspx");
+        }
+    }
 }

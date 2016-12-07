@@ -57,4 +57,15 @@ public partial class ProductMaintenance : System.Web.UI.Page
                 + "Please try again.";
         }
     }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["Role"] != null && Session["Role"].Equals("admin"))
+        {
+
+        }
+        else
+        {
+            Response.Redirect("Default.aspx");
+        }
+    }
 }

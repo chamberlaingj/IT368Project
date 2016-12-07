@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
          <LayoutTemplate>
              <table ID="itemHeadingsr" runat="server" cellspacing="0" cellpadding="0"
                 style="border-color: Black;font-size: small">
@@ -46,6 +46,11 @@
                             <td style="width: 200px">
                                 <asp:Label ID="TechnicianLabel" runat="server" 
                                     Text='<%# Eval("Technician") %>' Width="200" />
+                                <br>
+                                </br>
+                                <br>
+                                </br>
+                                <asp:Button runat="server" ID="Selctor" onClick="IncidentForum" Text='<%# Eval("IncidentID") %>'/>
                             </td>
                         </tr>
                         <tr style="height: 10px"></tr>
@@ -106,6 +111,11 @@
                             <td style="width: 200px">
                                 <asp:Label ID="TechnicianLabel" runat="server" 
                                     Text='<%# Eval("Technician") %>' Width="200" />
+                                <br>
+                                </br>
+                                <br>
+                                </br>
+                                <asp:Button runat="server" ID="Selctor2" onClick="IncidentForum" Text='<%# Eval("IncidentID") %>'/>
                             </td>
                         </tr>
                         <tr style="height: 10px"></tr>
@@ -154,13 +164,13 @@
                 style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                 <tr>
                     <td>
-                        No data was returned.</td>
+                        None</td>
                 </tr>
             </table>
         </EmptyDataTemplate>
 
 
     </asp:ListView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT Products.Name AS Product, Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.DateOpened, Incidents.DateClosed, Incidents.Title, Incidents.Description FROM (((Incidents INNER JOIN Customers ON Incidents.CustomerID = Customers.CustomerID) INNER JOIN Products ON Incidents.ProductCode = Products.ProductCode) INNER JOIN Technicians ON Incidents.TechID = Technicians.TechID) ORDER BY Incidents.DateOpened"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT Products.Name AS Product, Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.IncidentID, Incidents.DateOpened, Incidents.DateClosed, Incidents.Title, Incidents.Description FROM (((Incidents INNER JOIN Customers ON Incidents.CustomerID = Customers.CustomerID) INNER JOIN Products ON Incidents.ProductCode = Products.ProductCode) INNER JOIN Technicians ON Incidents.TechID = Technicians.TechID) ORDER BY Incidents.DateOpened"></asp:SqlDataSource>
 </asp:Content>
 
