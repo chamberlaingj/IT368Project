@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <div class="display-box">
-    <asp:Login ID="Login1" runat="server" LoginButtonText="Login" TitleText="Login">
+    <asp:Login ID="Login1" runat="server" LoginButtonText="Login" TitleText="Login"  OnAuthenticate="LoginControl_Authenticate">
         <LoginButtonStyle CssClass="btn btn-success" />
         <TextBoxStyle CssClass="black-type" />
     </asp:Login>
