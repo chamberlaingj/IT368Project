@@ -7,7 +7,7 @@
      <table>
             <tr>
                 <td>
-                    <asp:Label ID="Label1" runat="server" Text="Desired Username  "></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Desired Username:  "></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox1" CssClass="black-type" runat="server"></asp:TextBox>
@@ -15,7 +15,7 @@
             </tr>
          <tr>
                 <td>
-                    <asp:Label ID="Label2" runat="server" Text="Email  "></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Email:  "></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox2" CssClass="black-type" runat="server"></asp:TextBox>
@@ -24,7 +24,7 @@
 
          <tr>
                 <td>
-                    <asp:Label ID="Label3" runat="server" Text="Password  "></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Password:  "></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox3" CssClass="black-type" runat="server" TextMode="Password"></asp:TextBox>
@@ -33,7 +33,7 @@
 
          <tr>
                 <td>
-                    <asp:Label ID="Label4" runat="server" Text="Desired Username  "></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="Confirm Password:  "></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox4" CssClass="black-type" runat="server" TextMode="Password"></asp:TextBox>
