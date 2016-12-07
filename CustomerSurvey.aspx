@@ -16,6 +16,7 @@
         
         <asp:Label ID="lblNoIncidents" runat="server" ForeColor="Red"></asp:Label>
         <br />
+        <div class="display-box">
         <asp:ListBox ID="lstIncidents" runat="server" Width="448px" Enabled="False"></asp:ListBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="You must select an incident." ControlToValidate="lstIncidents" InitialValue="None" Width="192px" Display="Dynamic" Enabled="False" ValidationGroup="Submit" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -30,10 +31,10 @@
                 </td>
                 <td class="auto-style1">
                     <asp:RadioButtonList ID="rblResponseTime" runat="server" RepeatDirection="Vertical" Enabled="False">
-                        <asp:ListItem Value="1">Not satisfied</asp:ListItem>
-                        <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
-                        <asp:ListItem Value="3">Satisfied</asp:ListItem>
-                        <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
+                        <asp:ListItem Value="1">&nbsp;Not satisfied</asp:ListItem>
+                        <asp:ListItem Value="2">&nbsp;Somewhat satisfied</asp:ListItem>
+                        <asp:ListItem Value="3">&nbsp;Satisfied</asp:ListItem>
+                        <asp:ListItem Value="4">&nbsp;Completely satisfied</asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
             </tr>
@@ -43,10 +44,10 @@
                 </td>
                 <td class="auto-style1">
                     <asp:RadioButtonList ID="rblEfficiency" runat="server" RepeatDirection="Vertical" Enabled="False">
-                    <asp:ListItem Value="1">Not satisfied</asp:ListItem>
-                    <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
-                    <asp:ListItem Value="3">Satisfied</asp:ListItem>
-                    <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
+                    <asp:ListItem Value="1">&nbsp;Not satisfied</asp:ListItem>
+                    <asp:ListItem Value="2">&nbsp;Somewhat satisfied</asp:ListItem>
+                    <asp:ListItem Value="3">&nbsp;Satisfied</asp:ListItem>
+                    <asp:ListItem Value="4">&nbsp;Completely satisfied</asp:ListItem>
                 </asp:RadioButtonList>
                 </td>
             </tr>
@@ -55,10 +56,10 @@
                     <asp:Label ID="lblResolution" runat="server" Text="Problem resolution:" Enabled="False"></asp:Label>
                 </td>
                 <td class="auto-style1"><asp:RadioButtonList ID="rblResolution" runat="server" RepeatDirection="Vertical" Enabled="False">
-                    <asp:ListItem Value="1">Not satisfied</asp:ListItem>
-                    <asp:ListItem Value="2">Somewhat satisfied</asp:ListItem>
-                    <asp:ListItem Value="3">Satisfied</asp:ListItem>
-                    <asp:ListItem Value="4">Completely satisfied</asp:ListItem>
+                    <asp:ListItem Value="1">&nbsp;Not satisfied</asp:ListItem>
+                    <asp:ListItem Value="2">&nbsp;Somewhat satisfied</asp:ListItem>
+                    <asp:ListItem Value="3">&nbsp;Satisfied</asp:ListItem>
+                    <asp:ListItem Value="4">&nbsp;Completely satisfied</asp:ListItem>
                 </asp:RadioButtonList>
                 </td>
             </tr>
@@ -73,19 +74,22 @@
             </tr>
         </table>
         <br />
-        <asp:CheckBox ID="chkContact" runat="server" Text="Please contact me to discuss this incident" Enabled="False" /><br />
+        <center>
+        <asp:CheckBox ID="chkContact" runat="server" Text="&nbsp;Please contact me to discuss this incident." Enabled="False" /><br />
         <table>
             <tr>
                 <td class="style5">
                 </td>
                 <td class="style6">
-                    <asp:RadioButton ID="rdoContactByEmail" runat="server" GroupName="Contact" Text="Contact by email"
+                    <asp:RadioButton ID="rdoContactByEmail" runat="server" GroupName="Contact" Text="&nbsp;Contact by email"
                         Width="136px" Enabled="False" /><br />
-                    <asp:RadioButton ID="rdoContactByPhone" runat="server" GroupName="Contact" Text="Contact by phone"
+                    <asp:RadioButton ID="rdoContactByPhone" runat="server" GroupName="Contact" Text="&nbsp;Contact by phone"
                         Width="136px" Enabled="False" /></td>
             </tr>
         </table>
         <br />
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" Enabled="False" 
+        <asp:Button ID="btnSubmit" CssClass="btn btn-default-inv" runat="server" Text="Submit" Enabled="False" 
             ValidationGroup="Submit" onclick="btnSubmit_Click" /></div>
+        </center>
+        </div>
 </asp:Content>

@@ -30,7 +30,7 @@
     </asp:SqlDataSource>
     <br />
     <br />
-    <asp:DataList ID="dlIncidents" runat="server" DataSourceID="SqlDataSource2" CellPadding="4" ForeColor="#333333" BorderColor="Blue" BorderWidth="1px">
+    <asp:DataList ID="dlIncidents" runat="server" DataSourceID="SqlDataSource2" CellPadding="3" ForeColor="Black" BorderColor="Black" BorderWidth="3px" BackColor="White" BorderStyle="Solid" GridLines="Vertical">
         <ItemTemplate>
             <table class="style1">
                 <tr>
@@ -64,11 +64,11 @@
                 </tr>
             </table>
         </HeaderTemplate>
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <AlternatingItemStyle BackColor="White" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Size="Small" Font-Strikeout="False" Font-Underline="False" />
-        <ItemStyle BackColor="#EFF3FB" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Size="Small" Font-Strikeout="False" Font-Underline="False" />
-        <HeaderStyle BackColor="Blue" Font-Bold="True" ForeColor="White" Font-Italic="False" Font-Names="Arial" Font-Overline="False" Font-Size="Small" Font-Strikeout="False" Font-Underline="False" />
+        <FooterStyle BackColor="#CCCCCC" />
+        <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        <AlternatingItemStyle BackColor="#CCCCCC" Font-Size="Small" />
+        <ItemStyle Font-Size="Small" />
+        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" Font-Names="Arial" Font-Size="Small" />
     </asp:DataList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>"
         SelectCommand="SELECT Products.Name, Technicians.Name AS IncTech,

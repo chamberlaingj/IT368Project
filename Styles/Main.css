@@ -109,6 +109,30 @@
 th, td {
   padding: 5px; }
 
+.display-box {
+  display: inline-block;
+  background-color: #000099;
+  border: solid;
+  border-color: black;
+  border-width: 3px;
+  padding: 5px;
+  color: white; }
+  .display-box .black-type {
+    color: black; }
+
+.btn-default-inv {
+  color: white;
+  background-color: black;
+  border-color: white; }
+  .btn-default-inv:hover {
+    color: black;
+    background-color: white;
+    border-color: black; }
+  .btn-default-inv:focus {
+    color: black;
+    background-color: white;
+    border-color: black; }
+
 .validator {
   color: black; }
 

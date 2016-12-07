@@ -93,9 +93,9 @@
                         </table>
                         <br />
                         <center>
-                            <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
+                            <asp:Button ID="UpdateButton" CssClass="btn btn-success" runat="server" CausesValidation="True" CommandName="Update"
                             Text="Update"></asp:Button>
-                            <asp:Button ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                            <asp:Button ID="UpdateCancelButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Cancel"
                             Text="Cancel"></asp:Button>
                         </center>
                         
@@ -136,9 +136,9 @@
                         </table>
                         <br />
                         <center>
-                            <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
+                            <asp:Button ID="InsertButton" CssClass="btn btn-success" runat="server" CausesValidation="True" CommandName="Insert"
                             Text="Insert"></asp:Button>
-                            <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                            <asp:Button ID="InsertCancelButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Cancel"
                             Text="Cancel"></asp:Button>
                         </center>
                     </InsertItemTemplate>
@@ -171,11 +171,11 @@
                         </table>
                         <br />
                         <center>
-                            <asp:Button ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
+                            <asp:Button ID="EditButton" CssClass="btn btn-warning" runat="server" CausesValidation="False" CommandName="Edit"
                             Text="Edit"></asp:Button>
-                            <asp:Button ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete"
+                            <asp:Button ID="DeleteButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Delete"
                             Text="Delete"></asp:Button>
-                            <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New"
+                            <asp:Button ID="NewButton" CssClass="btn btn-success" runat="server" CausesValidation="False" CommandName="New"
                             Text="New"></asp:Button>
                         </center>
                     </ItemTemplate>
