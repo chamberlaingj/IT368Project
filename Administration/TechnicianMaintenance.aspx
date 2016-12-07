@@ -22,10 +22,6 @@
         {
             width: 40px;
         }
-        .style6
-        {
-            width: 222px;
-        }
          input, button, select, textarea {
             font-family: inherit;
             font-size: inherit;
@@ -215,11 +211,9 @@
                         <asp:Parameter Name="Phone" Type="String" />
                     </InsertParameters>
                 </asp:SqlDataSource>
-            </td>
-            <td class="style4"></td>
-            <td class="style6" valign="top">
+                <br />
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-                    HeaderText="Please correct the following errors:" ForeColor="Red" />
+                    HeaderText="Please correct the following errors:" ForeColor="Red" Width="350px" />
             </td>
         </tr>
     </table>
