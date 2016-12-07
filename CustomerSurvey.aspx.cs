@@ -4,6 +4,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using SportsPro.Models;
+using System.Data.SqlClient;
 
 public partial class CustomerSurvey : System.Web.UI.Page
 {
@@ -11,13 +12,31 @@ public partial class CustomerSurvey : System.Web.UI.Page
 
     protected void btnGetIncidents_Click(object sender, EventArgs e)
     {
-        incidentsTable = (DataView)
-            AccessDataSource1.Select(DataSourceSelectArguments.Empty);
-        incidentsTable.RowFilter = "CustomerID = " + txtCustomerID.Text
-            + " And DateClosed Is Not Null";
-        if (incidentsTable.Count > 0)
+        int customerID = Convert.ToInt32(txtCustomerID.Text.ToString());
+        SqlConnection con = new SqlConnection(TechSupportDB.GetConnectionString());
+        string selectStatement = "SELECT * "
+                   + "FROM Incidents "
+                   + "WHERE DateClosed IS NOT NULL AND CustomerID = @CustomerID";
+        SqlCommand command = new SqlCommand(selectStatement, con);
+        command.Parameters.AddWithValue("CustomerID", customerID);
+        con.Open();
+        SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+
+        if (reader.HasRows)
         {
-            this.DisplayClosedIncidents();
+            lstIncidents.Items.Add(new ListItem("--Select an incident--", "None"));
+            while (reader.Read())
+            {
+                Incident incident = new Incident();
+                incident.IncidentID = Convert.ToInt32(reader["IncidentID"]);
+                incident.ProductCode = reader["ProductCode"].ToString();
+                incident.DateClosed = Convert.ToDateTime(reader["DateClosed"]);
+                incident.Title = reader["Title"].ToString();
+                lstIncidents.Items.Add(new ListItem(
+                    incident.CustomerIncidentDisplay(), incident.IncidentID.ToString()));
+            }
+            lstIncidents.SelectedIndex = 0;
+            lblNoIncidents.Text = "";
             this.EnableControls(true);
             lstIncidents.Focus();
         }
@@ -26,23 +45,6 @@ public partial class CustomerSurvey : System.Web.UI.Page
             lblNoIncidents.Text = "There are no incidents for that customer.";
             this.EnableControls(false);
         }
-    }
-
-    private void DisplayClosedIncidents()
-    {
-        lstIncidents.Items.Add(new ListItem("--Select an incident--", "None"));
-        foreach (DataRowView row in incidentsTable)
-        {
-            Incident incident = new Incident();
-            incident.IncidentID = Convert.ToInt32(row["IncidentID"]);
-            incident.ProductCode = row["ProductCode"].ToString();
-            incident.DateClosed = Convert.ToDateTime(row["DateClosed"]);
-            incident.Title = row["Title"].ToString();
-            lstIncidents.Items.Add(new ListItem(
-                incident.CustomerIncidentDisplay(), incident.IncidentID.ToString()));
-        }
-        lstIncidents.SelectedIndex = 0;
-        lblNoIncidents.Text = "";
     }
 
     private void EnableControls(bool enable)

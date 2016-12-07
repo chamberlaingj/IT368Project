@@ -13,43 +13,25 @@
         <br />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT * FROM [Customers] ORDER BY [Name]"></asp:SqlDataSource>
         <br />
-<<<<<<< HEAD
-        <asp:GridView ID="GridView1" runat="server">
+
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="SqlDataSource2">
+            <Columns>
+                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" InsertVisible="False" ReadOnly="True" SortExpression="CustomerID" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+                <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+                <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
+                <asp:BoundField DataField="ZipCode" HeaderText="ZipCode" SortExpression="ZipCode" />
+                <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
+                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+            </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT [CustomerID], [Name], [Address], [City], [State], [ZipCode], [Phone], [Email] FROM [Customers] WHERE ([CustomerID] = @CustomerID)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="ddlCustomers" Name="CustomerID" PropertyName="SelectedValue" />
             </SelectParameters>
         </asp:SqlDataSource>
-=======
         <div class="display-box">
-        <table>
-            <tr>
-                <td class="style1">
-                    Address:</td>
-                <td class="style2">
-                    <asp:Label ID="lblAddress" runat="server"></asp:Label></td>
-            </tr>
-            <tr>
-                <td class="style1">
-                    </td>
-                <td class="style2">
-                    <asp:Label ID="lblCityStateZip" runat="server"></asp:Label></td>
-            </tr>
-            <tr>
-                <td class="style1">
-                    Phone:</td>
-                <td class="style2">
-                    <asp:Label ID="lblPhone" runat="server"></asp:Label></td>
-            </tr>
-            <tr>
-                <td class="style1">
-                    Email:</td>
-                <td class="style2">
-                    <asp:Label ID="lblEmail" runat="server"></asp:Label></td>
-            </tr>
-        </table>
->>>>>>> origin/master
         <br />
         <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add to Contact List" Width="150px" onclick="btnAdd_Click" />
         &nbsp;
