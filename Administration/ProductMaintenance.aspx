@@ -14,18 +14,14 @@
         {
             width: 274px;
         }
-        .style4
-        {
-            color: #0000FF;
-        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
      <asp:GridView ID="grdProducts" runat="server" AutoGenerateColumns="False" 
         DataKeyNames="ProductCode" DataSourceID="SqlDataSource1" 
-        BorderColor="Blue" BorderWidth="1px" CellPadding="4" 
-        ForeColor="#333333" GridLines="None" Width="710px" 
-        onrowdeleted="grdProducts_RowDeleted" onrowupdated="grdProducts_RowUpdated">
+        BorderColor="#999999" BorderWidth="1px" CellPadding="3" 
+        ForeColor="Black" GridLines="Vertical" Width="710px" 
+        onrowdeleted="grdProducts_RowDeleted" onrowupdated="grdProducts_RowUpdated" BackColor="White" BorderStyle="Solid">
         <Columns>
             <asp:TemplateField HeaderText="Product code" SortExpression="ProductCode">
                 <EditItemTemplate>
@@ -80,17 +76,21 @@
                     <asp:Label ID="lblGridDate" runat="server" Text='<%# Bind("ReleaseDate", "{0:d}") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:CommandField ButtonType="Button" ShowEditButton="True" ValidationGroup="Edit" />
-            <asp:CommandField ButtonType="Button" CausesValidation="False" ShowDeleteButton="True" />
+            <asp:CommandField ButtonType="Button" ShowEditButton="True" ValidationGroup="Edit" ControlStyle-CssClass="btn btn-warning" ItemStyle-HorizontalAlign="Center" />
+            <asp:CommandField ButtonType="Button" CausesValidation="False" ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" ItemStyle-HorizontalAlign="Center" />
         </Columns>
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <RowStyle BackColor="#EFF3FB" Font-Size="Small" />
-        <EditRowStyle BackColor="CornflowerBlue" ForeColor="White" Font-Size="Small" Font-Bold="True" />
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <HeaderStyle BackColor="Blue" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
+        <FooterStyle BackColor="#CCCCCC" />
+        <RowStyle Font-Size="Small" />
+        <EditRowStyle Font-Size="Small" />
+        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="Black" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
             ForeColor="White" />
-        <AlternatingRowStyle BackColor="White" Font-Size="Small" />
+        <AlternatingRowStyle BackColor="#CCCCCC" Font-Size="Small" />
+         <SortedAscendingCellStyle BackColor="#F1F1F1" />
+         <SortedAscendingHeaderStyle BackColor="#808080" />
+         <SortedDescendingCellStyle BackColor="#CAC9C9" />
+         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConflictDetection="CompareAllValues"
@@ -125,15 +125,15 @@
     <br />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Please correct the following errors:"
         ValidationGroup="Edit" Width="275px" ForeColor="Red" />
-    <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red" EnableViewState="False"></asp:Label><br />
+    <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red" EnableViewState="False"></asp:Label>
     <br />
-    <span class="style4">
-    To add a new product, enter the product information and click Add Product.</span><br />
+    To add a new product, enter the product information and click "Add Product".
     <br />
+    <div class="display-box">
     <table>
         <tr>
             <td class="style1">Product code:</td>
-            <td class="style1">
+            <td class="style1 black-type">
                 <asp:TextBox ID="txtProductCode" runat="server" Width="100px"></asp:TextBox>
             </td>
             <td class="style2"></td>
@@ -145,7 +145,7 @@
         </tr>
         <tr>
             <td class="style1">Name:</td>
-            <td class="style1">
+            <td class="style1 black-type">
                 <asp:TextBox ID="txtName" runat="server" Width="210px"></asp:TextBox>
             </td>
             <td class="style2"></td>
@@ -157,7 +157,7 @@
         </tr>
         <tr>
             <td class="style1">Version:</td>
-            <td class="style1">
+            <td class="style1 black-type">
                 <asp:TextBox ID="txtVersion" runat="server" Width="100px"></asp:TextBox>
             </td>
             <td class="style2"></td>
@@ -173,7 +173,7 @@
         </tr>
         <tr>
             <td class="style1">Release date:</td>
-            <td class="style1">
+            <td class="style1 black-type">
                 <asp:TextBox ID="txtReleaseDate" runat="server" Width="100px">mm/dd/yy</asp:TextBox>
             </td>
             <td class="style2"></td>
@@ -189,7 +189,8 @@
         </tr>
     </table>
     <br />
-    <asp:Button ID="btnAdd" runat="server" Text="Add Product" ValidationGroup="Add" 
+    <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add Product" ValidationGroup="Add" 
         onclick="btnAdd_Click" /><br />
+    </div>
 </asp:Content>
 
