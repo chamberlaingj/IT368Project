@@ -17,7 +17,7 @@
         <asp:Label ID="lblNoIncidents" runat="server" ForeColor="Red"></asp:Label>
         <br />
         <div class="display-box">
-        <asp:ListBox ID="lstIncidents" runat="server" Width="448px" Enabled="False"></asp:ListBox>
+        <asp:ListBox ID="lstIncidents" CssClass="black-type" runat="server" Width="448px" Enabled="False"></asp:ListBox>
 
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="You must select an incident." ControlToValidate="lstIncidents" InitialValue="None" Width="192px" Display="Dynamic" Enabled="False" ValidationGroup="Submit" ForeColor="Red"></asp:RequiredFieldValidator>
         <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/App_Data/TechSupport.mdb" SelectCommand="SELECT [CustomerID], [ProductCode], [DateOpened], [Title], [DateClosed], [TechID], [IncidentID] FROM [Incidents] ORDER BY [DateClosed]"></asp:AccessDataSource>
@@ -70,7 +70,7 @@
                 <td class="style3" valign="top">
                     <asp:Label ID="lblComments" runat="server" Text="Additional comments:" Width="136px" Enabled="False"></asp:Label></td>
                 <td class="style4">
-                    <asp:TextBox ID="txtComments" runat="server" Rows="4" TextMode="MultiLine" Width="470px" Enabled="False"></asp:TextBox></td>
+                    <asp:TextBox ID="txtComments" CssClass="black-type" runat="server" Rows="4" TextMode="MultiLine" Width="470px" Enabled="False"></asp:TextBox></td>
             </tr>
         </table>
         <br />

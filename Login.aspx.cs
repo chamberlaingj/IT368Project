@@ -17,7 +17,7 @@ public partial class Login : System.Web.UI.Page
     {
         string username = Login1.UserName;
         string password = Login1.Password;
-        string checker = "SELECT * FROM Users WHERE username = " + "'" + username + "' AND password = " + "'" + password + "'";
+        string checker = "SELECT * FROM Users WHERE Username = " + "'" + username + "' AND Password = " + "'" + password + "'";
         SqlConnection con = new SqlConnection(TechSupportDB.GetConnectionString());
         SqlCommand cmd = new SqlCommand(checker, con);
         con.Open();
@@ -29,9 +29,13 @@ public partial class Login : System.Web.UI.Page
         }
         else
         {
-            con.Close();
-            Session["Role"] = "Customer";
-            Response.Redirect("ContactUs.aspx");
+            if (rdr.Read())
+            {
+                String x = rdr["Role"].ToString();
+                Session["Role"] = x;
+                con.Close();
+                Response.Redirect("ContactUs.aspx");
+            }
         }
     }
 }

@@ -33,7 +33,7 @@
 
          <tr>
                 <td>
-                    <asp:Label ID="Label4" runat="server" Text="Desired Username  "></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="Repeat Passsword  "></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox4" CssClass="black-type" runat="server" TextMode="Password"></asp:TextBox>

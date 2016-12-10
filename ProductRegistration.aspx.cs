@@ -61,9 +61,8 @@ public partial class ProductRegistration : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            Session["Exception"] = ex;
-            Session["Page"] = "~/Customer/ProductRegistration.aspx";
-            Response.Redirect("~/ErrorMessage.aspx");
+            
+            Response.Redirect("ErrorMessage.aspx");
         }
         finally
         {
@@ -74,7 +73,7 @@ public partial class ProductRegistration : System.Web.UI.Page
     private void SendEmailConfirmation()
     {
         MailAddress fromAdd = new MailAddress("sportspro@sportsprosoftware.com");
-        MailAddress toAdd = new MailAddress("anne@murach.com");
+        MailAddress toAdd = new MailAddress("John@yahoo.com");
         MailMessage msg = new MailMessage(fromAdd, toAdd);
         msg.Subject = "Product registration";
         msg.Body = "Thank you for registering " + ddlProducts.SelectedItem.Text

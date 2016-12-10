@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
+    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" >
          <LayoutTemplate>
              <table ID="itemHeadingsr" runat="server" cellspacing="0" cellpadding="0"
                 style="border-color: Black;font-size: small">

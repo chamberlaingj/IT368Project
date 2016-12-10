@@ -134,7 +134,7 @@
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
                     ConflictDetection="CompareAllValues"
                     ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" 
-                    DeleteCommand="DELETE * FROM [Registrations] WHERE [CustomerID] = @original_CustomerID"
+                    DeleteCommand="DELETE FROM [Registrations] WHERE [CustomerID] = @original_CustomerID"
                     InsertCommand="INSERT INTO [Customers] ([Name], [Address], [City], [State], [ZipCode], [Phone], [Email]) VALUES (@Name, @Address, @City, @State, @ZipCode, @Phone, @Email)"
                     OldValuesParameterFormatString="original_{0}" 
                     SelectCommand="SELECT [CustomerID], [Name], [Address], [City], [State], [ZipCode], [Phone], [Email] FROM [Customers] WHERE ([CustomerID] = @CustomerID)"
@@ -171,6 +171,9 @@
                         <asp:Parameter Name="Phone" Type="String" />
                         <asp:Parameter Name="Email" Type="String" />
                     </InsertParameters>
+                    <DeleteParameters>
+                        <asp:Parameter Name="original_CustomerID2" Type="Int32" />
+                    </DeleteParameters>
                 </asp:SqlDataSource>
                 <br />
                 <br />

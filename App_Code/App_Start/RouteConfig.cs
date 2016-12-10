@@ -14,6 +14,7 @@ namespace ASP
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
             routes.MapPageRoute("ContactDisplay", "ContactDisplay", "~/Administration/ContactDisplay.aspx");
+            routes.MapPageRoute("ContactCust", "ContactCust", "~/Administration/ContactCust.aspx");
             routes.MapPageRoute("CustomerDisplay", "CustomerDisplay", "~/Administration/CustomerDisplay.aspx");
             routes.MapPageRoute("CustomerMaintenance", "CustomerMaintenance", "~/Administration/CustomerMaintenance.aspx");
             routes.MapPageRoute("IncidentDisplay", "IncidentDisplay", "~/Administration/IncidentDisplay.aspx");

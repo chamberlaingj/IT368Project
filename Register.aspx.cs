@@ -40,7 +40,7 @@ public partial class Register : System.Web.UI.Page
             SqlCommand cmd2 = new SqlCommand(statement, con2);
             SqlDataReader rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection);
             con2.Close();
-            Session["Role"] = "Customer";
+            Session["Role"] = "customer";
             Response.Redirect("ContactUs.aspx");
             return;
         }

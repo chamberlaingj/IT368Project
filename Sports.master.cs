@@ -12,9 +12,9 @@ public partial class Sports : System.Web.UI.MasterPage
     Button button;
         protected void Page_Load(object sender, EventArgs e)
         {
-        if (Session["Role"] != null && Session["log"] == null)
+        if (Session["Role"] != null)
         {
-            if (Session["Role"].Equals("Customer") || Session["Role"].Equals("Admin") || Session["Role"].Equals("Tech"))
+            if (Session["Role"].Equals("customer") || Session["Role"].Equals("admin") || Session["Role"].Equals("tech"))
             {
                 Session["log"] = "true";
                 button = new Button
@@ -36,8 +36,8 @@ public partial class Sports : System.Web.UI.MasterPage
     protected void LinkButton_Click(object sender, EventArgs e)
     {
         Session["Role"] = null;
-        Session["log"] = "null";
         this.Controls.Remove(button);
+        Response.Redirect("Default.aspx");
 
 
 

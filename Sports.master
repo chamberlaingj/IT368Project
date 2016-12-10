@@ -70,6 +70,7 @@
                 <li><a href="IncidentDisplay">Display Incidents</a></li>
                 <li><a href="CustomerDisplay">Display Customers</a></li>
                 <li><a href="TechnicianIncidentSummary">Display Incidents By Technician</a></li>
+                <li><a href="ContactCust">Contact Customer</a></li>
               </ul>
             </li>
            </ul>
