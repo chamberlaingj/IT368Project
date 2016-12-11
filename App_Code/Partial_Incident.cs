@@ -1,9 +1,9 @@
 using System;
 namespace SportsPro.Models
 {
-    public partial class Incident
+    public partial class Partial_Incident
     {
-        public Incident() { }
+        public Partial_Incident() { }
 
         public int IncidentID { get; set; }
         public int CustomerID { get; set; }

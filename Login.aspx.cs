@@ -15,24 +15,27 @@ public partial class Login : System.Web.UI.Page
     }
     protected void LoginControl_Authenticate(object sender, AuthenticateEventArgs e)
     {
-        string username = Login1.UserName;
+        string email = Login1.UserName;
         string password = Login1.Password;
-        string checker = "SELECT * FROM Users WHERE Username = " + "'" + username + "' AND Password = " + "'" + password + "'";
+        string checker = "SELECT * FROM Customers WHERE Email = " + "'" + email + "' AND Password = " + "'" + password + "'";
         SqlConnection con = new SqlConnection(TechSupportDB.GetConnectionString());
         SqlCommand cmd = new SqlCommand(checker, con);
         con.Open();
         SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
         if (!rdr.HasRows)
         {
-            Login1.FailureText = "NOO!";
+            Login1.FailureText = "Login Failed. Try Again.";
             return;
         }
         else
         {
             if (rdr.Read())
             {
-                String x = rdr["Role"].ToString();
-                Session["Role"] = x;
+                string role = rdr["Role"].ToString();
+                string name = rdr["Name"].ToString();
+                Session["Email"] = email;
+                Session["Name"] = name;
+                Session["Role"] = role;
                 con.Close();
                 Response.Redirect("ContactUs.aspx");
             }

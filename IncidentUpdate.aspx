@@ -12,9 +12,9 @@
     </asp:ObjectDataSource>
     <br />
     <br />
-    <asp:GridView ID="grdIncidents" runat="server" DataSourceID="ObjectDataSource2" 
+    <asp:GridView ID="grdIncidents" runat="server" DataSourceID="SqlDataSource1" 
         AutoGenerateColumns="False" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" 
-        CellPadding="3" ForeColor="Black" GridLines="Vertical" Width="850px" BackColor="White">
+        CellPadding="3" ForeColor="Black" GridLines="Vertical" Width="850px" BackColor="White" OnRowUpdating="dtlCustomers_Updated">
         <Columns>
             <asp:BoundField DataField="IncidentID" HeaderText="ID" ReadOnly="True">
                 <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="25px" />
@@ -51,6 +51,8 @@
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-warning">
+<ControlStyle CssClass="btn btn-warning"></ControlStyle>
+
                 <ItemStyle VerticalAlign="Top" />
             </asp:CommandField>
         </Columns>
@@ -66,19 +68,11 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
-        OldValuesParameterFormatString="original_{0}" TypeName="IncidentDB" 
-        SelectMethod="GetCustomerIncidents" UpdateMethod="UpdateIncident" 
-        ConflictDetection="CompareAllValues">
-        <UpdateParameters>
-            <asp:Parameter Name="original_Incident" Type="Object" />
-            <asp:Parameter Name="incident" Type="Object" />
-        </UpdateParameters>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT IncidentID, ProductCode, DateOpened, DateClosed, Title, Description FROM Incidents WHERE (CustomerID = @CustomerID) AND (TechID IS NOT NULL)" UpdateCommand="UPDATE Incidents SET TechID = '123' WHERE (Description = '01/01/01')">
         <SelectParameters>
-            <asp:ControlParameter ControlID="ddlCustomers" Name="CustomerID" PropertyName="SelectedValue"
-                Type="Int32" />
+            <asp:ControlParameter ControlID="ddlCustomers" Name="CustomerID" PropertyName="SelectedValue" />
         </SelectParameters>
-    </asp:ObjectDataSource>
+    </asp:SqlDataSource>
     <br />
     <asp:Label ID="lblErrorMessage" runat="server" EnableViewState="False" ForeColor="Red"></asp:Label><br />
 </asp:Content>

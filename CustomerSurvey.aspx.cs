@@ -27,7 +27,7 @@ public partial class CustomerSurvey : System.Web.UI.Page
             lstIncidents.Items.Add(new ListItem("--Select an incident--", "None"));
             while (reader.Read())
             {
-                Incident incident = new Incident();
+                Partial_Incident incident = new Partial_Incident();
                 incident.IncidentID = Convert.ToInt32(reader["IncidentID"]);
                 incident.ProductCode = reader["ProductCode"].ToString();
                 incident.DateClosed = Convert.ToDateTime(reader["DateClosed"]);

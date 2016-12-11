@@ -42,44 +42,5 @@ public class IncidentDB
         return dr;
     }
 
-    [DataObjectMethod(DataObjectMethodType.Update)]
-    public static int UpdateIncident(Incident original_Incident, Incident incident)
-    {
-        SqlConnection con = new SqlConnection(TechSupportDB.GetConnectionString());
-        string up = "UPDATE Incidents "
-                  + "SET DateClosed = @DateClosed, "
-                  + "Description = @Description "
-                  + "WHERE IncidentID = @original_IncidentID "
-                  + "AND ProductCode = @original_ProductCode "
-                  + "AND DateOpened = @original_DateOpened "
-                  + "AND (DateClosed = @original_DateClosed "
-                  + "OR DateClosed IS NULL "
-                  + "AND @original_DateClosed IS NULL) "
-                  + "AND Title = @original_Title "
-                  + "AND Description = @original_Description";
-        SqlCommand cmd = new SqlCommand(up, con);
-
-        if (incident.DateClosed == Convert.ToDateTime("01/01/0001 12:00:00 AM"))
-            cmd.Parameters.AddWithValue("DateClosed", DBNull.Value);
-        else
-            cmd.Parameters.AddWithValue("DateClosed", incident.DateClosed);
-
-        cmd.Parameters.AddWithValue("Description", incident.Description);
-        cmd.Parameters.AddWithValue("original_IncidentID", original_Incident.IncidentID);
-        cmd.Parameters.AddWithValue("original_ProductCode", original_Incident.ProductCode);
-        cmd.Parameters.AddWithValue("original_DateOpened", original_Incident.DateOpened);
-
-        if (original_Incident.DateClosed == Convert.ToDateTime("01/01/0001 12:00:00 AM"))
-            cmd.Parameters.AddWithValue("original_DateClosed", DBNull.Value);
-        else
-            cmd.Parameters.AddWithValue("original_DateClosed", original_Incident.DateClosed);
-
-        cmd.Parameters.AddWithValue("original_Title", original_Incident.Title);
-        cmd.Parameters.AddWithValue("original_Description", original_Incident.Description);
-
-        con.Open();
-        int i = cmd.ExecuteNonQuery();
-        con.Close();
-        return i;
-    }
+  
 }

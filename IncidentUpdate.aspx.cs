@@ -9,13 +9,17 @@ public partial class IncidentUpdate : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Role"] != null && Session["Role"].Equals("customer"))
-        {
-            Response.Redirect("Default.aspx");
-        }
-        else
-        {
+        //if (Session["Role"] != null && Session["Role"].Equals("customer"))
+        //{
+        //    Response.Redirect("Default.aspx");
+        //}
+        //else
+        //{
 
-        }
+        //}
+    }
+    protected void dtlCustomers_Updated(object sender, DetailsViewUpdatedEventArgs e)
+    {
+        int x = 0;
     }
 }
