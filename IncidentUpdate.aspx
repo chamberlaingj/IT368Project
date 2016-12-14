@@ -1,20 +1,18 @@
-﻿<%@ Page Title="Incident Update" Language="C#" MasterPageFile="~/Sports.master" AutoEventWireup="true" CodeFile="ContactUs.aspx.cs" Inherits="ContactUs" %>
+﻿<%@ Page Title="Incident Update" Language="C#" MasterPageFile="~/Sports.master" AutoEventWireup="true" CodeFile="IncidentUpdate.aspx.cs" Inherits="IncidentUpdate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     Select a customer:&nbsp;
-    <asp:DropDownList ID="ddlCustomers" runat="server" DataSourceID="ObjectDataSource1"
+    <asp:DropDownList ID="ddlCustomers" runat="server" DataSourceID="SqlDataSource2"
         DataTextField="Name" DataValueField="CustomerID" Width="225px" AutoPostBack="True">
     </asp:DropDownList>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-        SelectMethod="GetCustomersWithIncidents" TypeName="CustomerDB">
-    </asp:ObjectDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT CustomerID, Name FROM Customers WHERE (CustomerID IN (SELECT DISTINCT CustomerID FROM Incidents WHERE (DateClosed IS NULL))) ORDER BY Name"></asp:SqlDataSource>
     <br />
     <br />
     <asp:GridView ID="grdIncidents" runat="server" DataSourceID="SqlDataSource1" 
-        AutoGenerateColumns="False" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" 
-        CellPadding="3" ForeColor="Black" GridLines="Vertical" Width="850px" BackColor="White" OnRowUpdating="dtlCustomers_Updated">
+        AutoGenerateColumns="False" BorderColor="Blue" BorderStyle="Solid" BorderWidth="1px" 
+        CellPadding="4" ForeColor="#333333" GridLines="None" Width="850px" DataKeyNames="IncidentID" OnRowUpdated="grdIncidents_RowUpdated">
         <Columns>
             <asp:BoundField DataField="IncidentID" HeaderText="ID" ReadOnly="True">
                 <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="25px" />
@@ -50,28 +48,28 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-warning">
-<ControlStyle CssClass="btn btn-warning"></ControlStyle>
-
+            <asp:CommandField ButtonType="Button" ShowEditButton="True" >
                 <ItemStyle VerticalAlign="Top" />
             </asp:CommandField>
         </Columns>
-        <FooterStyle BackColor="#CCCCCC" />
-        <RowStyle Font-Size="Small" />
-        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-        <HeaderStyle BackColor="Black" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <RowStyle BackColor="#EFF3FB" Font-Size="Small" />
+        <EditRowStyle BackColor="CornflowerBlue" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="Blue" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
             ForeColor="White" />
-        <AlternatingRowStyle BackColor="#CCCCCC" />
-        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-        <SortedAscendingHeaderStyle BackColor="#808080" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-        <SortedDescendingHeaderStyle BackColor="#383838" />
+        <AlternatingRowStyle BackColor="White" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT IncidentID, ProductCode, DateOpened, DateClosed, Title, Description FROM Incidents WHERE (CustomerID = @CustomerID) AND (TechID IS NOT NULL)" UpdateCommand="UPDATE Incidents SET TechID = '123' WHERE (Description = '01/01/01')">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT IncidentID, ProductCode, DateOpened, DateClosed, Title, Description FROM Incidents WHERE (CustomerID = @CustomerID) AND (DateClosed IS NULL)" UpdateCommand="UPDATE Incidents SET DateClosed = @DateClosed, Description = @Description WHERE (IncidentID = @IncidentID)">
         <SelectParameters>
             <asp:ControlParameter ControlID="ddlCustomers" Name="CustomerID" PropertyName="SelectedValue" />
         </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="DateClosed" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
+            <asp:Parameter Name="IncidentID" Type="Int32"/>
+        </UpdateParameters>
     </asp:SqlDataSource>
     <br />
     <asp:Label ID="lblErrorMessage" runat="server" EnableViewState="False" ForeColor="Red"></asp:Label><br />

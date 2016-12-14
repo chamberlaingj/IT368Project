@@ -56,6 +56,7 @@
               <ul class="dropdown-menu">
                 <li><a href="TechSupport_CustomerIncidentDisplay">Display Customer Incidents</a></li>
                 <li><a href="TechSupport_IncidentUpdate">Update Incident</a></li>
+                <li><a href="TechSupport_IncidentForum">Update Incident</a></li>
               </ul>
             </li>
 

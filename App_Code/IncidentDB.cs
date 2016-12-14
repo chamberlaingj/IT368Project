@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.ComponentModel;
 using System.Collections;
 using SportsPro.Models;
-
 [DataObject(true)]
 public class IncidentDB
 {
@@ -34,13 +33,11 @@ public class IncidentDB
                    + "DateOpened, DateClosed, Title, Description "
                    + "FROM Incidents "
                    + "WHERE CustomerID = @CustomerID "
-                   + "AND TechID IS NOT NULL";
+                   + "AND DateClosed IS NULL";
         SqlCommand cmd = new SqlCommand(sel, con);
         cmd.Parameters.AddWithValue("CustomerID", CustomerID);
         con.Open();
         SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
         return dr;
     }
-
-  
 }

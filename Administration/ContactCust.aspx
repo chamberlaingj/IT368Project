@@ -5,8 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     
-    Text to customer:&nbsp;
-    <asp:TextBox ID="TextBox1" runat="server" Height="80px" TextMode="MultiLine" Width="215px"></asp:TextBox>
+    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+    </asp:DropDownList>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT Name, Phone FROM Customers WHERE (Role = 'customer')"></asp:SqlDataSource>
+    Text Message<br />
+    <asp:TextBox ID="TextBox1" runat="server" Height="91px" TextMode="MultiLine" Width="396px"></asp:TextBox>
     <br />
     <br />
     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Send!" />

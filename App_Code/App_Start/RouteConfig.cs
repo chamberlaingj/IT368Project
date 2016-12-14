@@ -29,6 +29,7 @@ namespace ASP
             routes.MapPageRoute("CustomerSurvey", "CustomerSupport_CustomerSurvey", "~/CustomerSurvey.aspx");
             routes.MapPageRoute("SurveyComplete", "SurveyComplete", "~/SurveyComplete.aspx");
             routes.MapPageRoute("TechnicianSupport", "TechnicianSupport", "~/TechnicianSupport.aspx");
+           routes.MapPageRoute("IncidentForum", "TechSupport_IncidentForum", "~/IncidentForum.aspx");
 
 
         }
