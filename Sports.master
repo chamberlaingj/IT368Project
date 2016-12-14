@@ -56,7 +56,6 @@
               <ul class="dropdown-menu">
                 <li><a href="TechSupport_CustomerIncidentDisplay">Display Customer Incidents</a></li>
                 <li><a href="TechSupport_IncidentUpdate">Update Incident</a></li>
-                <li><a href="TechSupport_IncidentForum">Update Incident</a></li>
               </ul>
             </li>
 
@@ -72,13 +71,14 @@
                 <li><a href="CustomerDisplay">Display Customers</a></li>
                 <li><a href="TechnicianIncidentSummary">Display Incidents By Technician</a></li>
                 <li><a href="ContactCust">Contact Customer</a></li>
+                  <li><a href="MakeAdmin">Make Customer Admin</a></li>
               </ul>
             </li>
            </ul>
 
            <ul class="nav navbar-nav navbar-right">
             <li><a href="ContactUs">Contact Us</a></li>
-            <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
+            <li><asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder></li>
            </ul>
 
         </div><!-- /.navbar-collapse -->

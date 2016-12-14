@@ -30,9 +30,9 @@ Comments<br />
     </Columns>
 </asp:GridView>
 <br />
-<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT Comment FROM Forum WHERE (ForumID = @ForumID)">
+<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT Comment FROM Forum WHERE (IncidentID = @IncidentID)">
     <SelectParameters>
-        <asp:ControlParameter ControlID="Label1" Name="ForumID" PropertyName="Text" />
+        <asp:ControlParameter ControlID="Label1" Name="IncidentID" PropertyName="Text" />
     </SelectParameters>
 </asp:SqlDataSource>
 <asp:TextBox ID="TextBox1" runat="server" Height="108px" TextMode="MultiLine" Width="531px"></asp:TextBox>

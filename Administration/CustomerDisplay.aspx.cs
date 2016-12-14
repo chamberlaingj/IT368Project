@@ -11,14 +11,14 @@ public partial class CustomerDisplay : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["Role"] != null && Session["Role"].Equals("admin"))
-        //{
+        if (Session["Role"] != null && Session["Role"].Equals("admin"))
+        {
 
-        //}
-        //else
-        //{
-        //    Response.Redirect("Default.aspx");
-        //}
+        }
+        else
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 
     private Customer GetselectedCustomer()

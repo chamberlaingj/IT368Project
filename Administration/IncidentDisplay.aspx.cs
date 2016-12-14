@@ -7,28 +7,17 @@ using System.Web.UI.WebControls;
 
 public partial class IncidentDisplay : System.Web.UI.Page
 {
-    //protected void Page_Load(object sender, EventArgs e)
-    //{
-    //    if (Session["Role"] != null && Session["Role"].Equals("admin"))
-    //    {
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["Role"] != null && Session["Role"].Equals("admin"))
+       {
 
-    //    }
-    //    else
-    //    {
-    //        Response.Redirect("Default.aspx");
-    //    }
-    //}
-    //protected void Page_Load(object sender, EventArgs e)
-    //{
-    //    if (Session["Role"] != null && Session["Role"].Equals("admin"))
-    //    {
-
-    //    }
-    //    else
-    //    {
-    //        Response.Redirect("Default.aspx");
-    //    }
-    //}
+       }
+       else
+       {
+         Response.Redirect("Default.aspx");
+        }
+    }
     protected void IncidentForum(object sender, EventArgs e)
     {
         string s = (sender as Button).Text;
