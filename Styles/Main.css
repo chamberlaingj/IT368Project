@@ -103,6 +103,20 @@
       color: white;
       background-color: black; } }
 
+#btnLogout {
+  color: white;
+  background-color: black;
+  border-color: white;
+  padding: 13px; }
+  #btnLogout:hover {
+    color: black;
+    background-color: white;
+    border-color: black; }
+  #btnLogout:focus {
+    color: black;
+    background-color: white;
+    border-color: black; }
+
 #content {
   padding: 25px; }
 

@@ -19,7 +19,7 @@ public partial class Sports : System.Web.UI.MasterPage
                 Session["log"] = "true";
                 button = new Button
                 {
-                    ID = "Button3",
+                    ID = "btnLogout",
                     Text = "Logout"
                 };
             button.Click += LinkButton_Click;

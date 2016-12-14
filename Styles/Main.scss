@@ -1,5 +1,5 @@
 ﻿$nav-color1: white;
-$nav-color2: blue;
+$nav-color2: black;
 $nav-color3: white;
 $main-color: #000099;
 $second-color: red;
@@ -137,6 +137,23 @@ body {
             color: $nav-color1;
             background-color: $nav-color2;
         }
+    }
+}
+
+#btnLogout {
+    color: white;
+    background-color: black;
+    border-color: white;
+    padding: 13px;
+    &:hover {
+        color: black;
+        background-color: white;
+        border-color: black;
+    }
+    &:focus {
+        color: black;
+        background-color: white;
+        border-color: black;
     }
 }
 
