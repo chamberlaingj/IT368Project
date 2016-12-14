@@ -20,7 +20,7 @@
 <div class="container">
 <form id="form1" runat="server">
     <div id="header" class="hidden-xs">
-        <span class="MainHeading">SportsPro</span><br />
+        <a href="Default"><span class="MainHeading">SportsPro</span></a><br />
         <span class="Subheading">Sports management software for the sports enthusiast</span><br />
     </div>
 
@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#">SportsPro</a>
+          <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="Default">SportsPro</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
