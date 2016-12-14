@@ -42,7 +42,7 @@
                     <asp:Label ID="Label5" runat="server" Text="State:  "></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox5" CssClass="black-type" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox5" CssClass="black-type" runat="server" MaxLength="2"></asp:TextBox>
                 </td>
             </tr>
           <tr>

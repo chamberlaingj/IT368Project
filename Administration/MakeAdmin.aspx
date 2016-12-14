@@ -12,9 +12,7 @@
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" SelectCommand="SELECT Name, Phone FROM Customers WHERE (Role = 'customer')"></asp:SqlDataSource>
     <br />
     <br />
-    <br />
-    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Make Admin!" />
-    <br />
+    <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" OnClick="Button1_Click" Text="Make Admin!" />
     <br />
     <br />
     <asp:Label ID="Label1" runat="server"></asp:Label>
