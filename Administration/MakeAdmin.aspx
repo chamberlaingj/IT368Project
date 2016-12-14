@@ -17,5 +17,5 @@
     <br />
     <br />
     <br />
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label1" runat="server"></asp:Label>
 </asp:Content>

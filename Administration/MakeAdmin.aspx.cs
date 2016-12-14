@@ -24,14 +24,15 @@ public partial class MakeAdmin : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(TechSupportDB.GetConnectionString());
         string name = DropDownList1.Text.ToString();
-        string sel = "UPUDATE customers " +
-                   "SET Role = admin" +
-                   "WHERE Name = " + "'" + name + "'";
+        string sel = "UPDATE customers " +
+                   "SET Role = 'admin' " +
+                   "WHERE name = " + "'" + name + "'";
 
         SqlCommand cmd = new SqlCommand(sel, con);
         con.Open();
         SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
         dr.Read();
+        DropDownList1.DataBind();
         Label1.Text = "Success!";
         return;
     }
